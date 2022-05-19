@@ -9,13 +9,16 @@ public class VerEnConsola : MonoBehaviour
     public Text Msj;
     public void Input()
     {
-        if (mensaje.text == "")
+        int num = int.Parse(mensaje.text);
+        if (num < 0)
         {
-            Debug.Log("Mensaje vacío no válido, reintentar");
+            Debug.Log("Número que no es entero no es válido, reintentar");
         }
         else {
-            Msj.text = mensaje.text;
+            int res = num * num;
+            Msj.text = res.ToString();
         }
+        //int counter = 0; counter < int.Parse(cloneAmount.text)
     }
-    
+
 }
