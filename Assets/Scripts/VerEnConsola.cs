@@ -5,16 +5,16 @@ using UnityEngine.UI;
 
 public class VerEnConsola : MonoBehaviour
 {
-    public string mensaje;
+    public Text mensaje;
     public Text Msj;
     public void Input()
     {
-        if (mensaje == "")
+        if (mensaje.text == "")
         {
             Debug.Log("Mensaje vacío no válido, reintentar");
         }
         else {
-            Msj.text = mensaje;
+            Msj.text = mensaje.text;
         }
     }
     
