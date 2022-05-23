@@ -8,8 +8,12 @@ public class PlatformScript : MonoBehaviour
     public float xRightLimit;
     public float xLeftLimit;
     public bool ToRight;
+
     public GameObject prefab1;
     public GameObject prefab2;
+
+    public GameObject baseDer;
+    public GameObject baseIzq;
 
     void Start()
     {
@@ -29,12 +33,16 @@ public class PlatformScript : MonoBehaviour
         if (transform.position.x >= xRightLimit)
         {
             ToRight = false;
-            Instantiate(prefab1);
+            GameObject clon;
+            clon = Instantiate(prefab1);
+            clon.transform.position = baseDer.transform.position + new Vector3 (0, 1, 0);
         }
         else if (transform.position.x <= xLeftLimit)
         {
             ToRight = true;
-            Instantiate(prefab2);
+            GameObject clon;
+            clon = Instantiate(prefab2);
+            clon.transform.position = baseIzq.transform.position + new Vector3(0, 1, 0);
         }
 
     }
